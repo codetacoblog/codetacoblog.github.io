@@ -1,2 +1,3 @@
-# codetacoblog.github.io
-Githup Pages Site
+# Code Taco Blog
+
+A friendly endeavor towards software knowledge.
