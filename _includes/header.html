@@ -6,8 +6,10 @@
       </div>
       <div class="nav__logo">
         <a class="logo" href="/">
-          <img class="logo__img" src="{{ "/assets/images/logo.jpg" | prepend: site.github.url }}" alt="Logo">
-          <span class="isVisuallyHidden">Home</span>
+          <div class="logo__img">
+            {% include logo.svg %}
+          </div>
+          <h1 class="logo__txt">CodeTaco</h1>
         </a>
       </div>
       <div class="nav__links">
