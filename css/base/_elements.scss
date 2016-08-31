@@ -11,7 +11,8 @@ html {
 }
 
 body {
-  background: $COLOR_PRIMARY_DARK;
+  background-color: $COLOR_PRIMARY_DARK;
+  background-repeat: repeat;
   color: $COLOR_LIGHTEST;
   font-family: $FONT_FAMILY_SANS;
   font-size: 1.6rem;
