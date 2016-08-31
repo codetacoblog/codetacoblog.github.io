@@ -28,9 +28,12 @@
                     <div class="set__bd">
                       <span class="txt txt--sm">{{ page.date | date: "%b %-d, %Y" }}</span>
                     </div>
+                    <div class="set__bd">
+                      <span class="txt txt--sm">By: <a class="txt txt--link" href="{{site.github.url}}/authors/{{page.author}}">{{ page.authorname }}</a></span>
+                    </div>
                     <div class="set__ft">
                       {% for tag in page.tags %}
-                        <a class="txt txt--sm" href="{{site.github.url}}/tag/{{tag}}">#{{ tag }}</a>
+                        <a class="txt txt--sm txt--link" href="{{site.github.url}}/tag/{{tag}}">#{{ tag }}</a>
                       {% endfor %}
                     </div>
                   </div>

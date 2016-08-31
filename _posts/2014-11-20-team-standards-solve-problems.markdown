@@ -1,170 +1,185 @@
 ---
 layout: post
-title:  "Team Standards Solve Problems"
-date:   2014-11-20 09:45:00 -0600
-categories: articles
-tags: process teamwork management
+title:  "An Example of the Importance of Using Getters and Setters"
+date:   2016-01-27 09:45:00 -0600
+categories: articles degreef
+tags: software-design
+author: degreef
+authorname: "Dan DeGreef"
 ---
 
-Starting out on a new team can prove difficult, especially in software, where every individual and team has their own opinions on how to get work done and what constitutes good work.
+“Getters” and “setters” are methods on an object that allow a client to access and manipulate the properties of that object. A key aspect of designing classes that use getters and setters is that each property on the object should be private. This means that access to the property, both reading and writing, is controlled through the object’s methods. This is known as encapsulation.
 
-I recently left a company that does not maintain development standards and accepted a new position at The Nerdery.
+Not Using Getters and Setters:
 
-The Nerdery has a set of standards for every team's discipline. For example, my primary discipline is JavaScript, with a secondary emphasis in HTML/CSS, so I have two sets of standards at my disposal. When I started digging in to the documentation, I realized this investment by other, more knowledgeable engineers would pay off in several big ways.
+{% highlight php %}
+<?php
 
-## Why Implement Team Standards?
+class Building {
+  public $address;
+}
 
-On-boarding a new software engineer should be an efficient and conflict-free process. Team Standards are the best way to implement efficient on-boarding for three reasons:
+$house = new Building();
 
-### 1. Standards benefit the business
+$house->address = "123 Fake St.";
 
-I was billable in a matter of hours in my first week at The Nerdery because I could enter a codebase and know what was expected of me. I self-reviewed my code against standards before checking it in. When I had a question for my team lead, it was to clarify a rule, rather than to define one from the ground up.
-
-This drastically cuts down on the wasted time at the beginning of a new hire's introduction to a company, and as a consequence, makes engineer churn less of an issue. A company with standards can scale faster and make up for the loss of established employees with less effort.
-
-### 2. Standards benefit the engineering team
-
-In previous positions, I have been brought in to a team only after working through initial fake projects and getting feedback from other engineers. There is no need for this with a clearly defined set of instructions for meeting the level of code quality expected by your team. With standards, the new engineer does not disrupt interoperability<sup id="footnote-src-1"><a href="#footnote-1">1</a></sup> in the code.
-
-### 3. Standards benefit the new engineer
-
-Learning the important concepts that drive the creation of a standard is just as valuable as following the standard. This is the popular Why Not What<sup id="footnote-src-2"><a href="#footnote-2">2</a></sup> leadership paradigm. A new engineer hits the ground running with standards, but also has a chance to grow in their discipline.
-
-## What Should Standards Look Like?
-
-### Issue : Rule : Example
-
-I think this is largely open to interpretation, but it seems like a great place to start is the issue : rule : example format. A good showcase of this format is [@mdo](https://twitter.com/mdo)'s [codeguide](http://codeguide.co/). Here is an issue he identified:
-
-> Reducing markup
-
-and now the rule:
-
-> Whenever possible, avoid superfluous parent elements when writing HTML. Many times this requires iteration and refactoring, but produces less HTML. Take the following example:
-
-and finally, the example:
-
-{% highlight html %}
-<!-- Not so great -->
-<span class="avatar">
-  <img src="...">
-</span>
-
-<!-- Better -->
-<img class="avatar" src="...">
+echo $house->address;
 {% endhighlight %}
 
-### Rule : Example
+Using Getters and Setters:
 
-Including an issue is helpful and makes reading standards easy, but there is a legitimate argument for not including one. If all the standards provide are a rule : example format, the new engineer is forced to think about why the rule was made. It's a simple teaching method, and I know firsthand it is an effective one. Here is a rule from The Nerdery's Front End Development Standards pertaining to SCSS:
+{% highlight php %}
+<?php
 
-> Do not use @extend.
+class Building {
 
-and now the example:
+    public $address;
 
-{% highlight scss %}
-/* DO */
-.message {
-    padding: 10px;
-    border: 1px solid #cccccc;
 }
 
-.message_success { color: #00ff00; }
-.message_error { color: #ff0000; }
+$house = new Building();
 
-/* DO NOT*/
-.message {
-    padding: 10px;
-    border: 1px solid #cccccc;
-}
+$house->address = "123 Fake St.";
 
-.message_success {
-    @extend .message;
-    color: #00ff00;
-}
-
-.message_error {
-    @extend .message;
-    color: #ff0000;
-}
+echo $house->address;
 {% endhighlight %}
 
-When I first saw this part of the standards, I didn't understand why senior engineers did not want me to use `@extend`. In my past experiences, it had seemed like a helpful tool for extending a class. When I thought about the rule in the context of the other Front End standards, however, I realized `@extend` had the potential to create CSS relationships in the stylesheet output that defeat the module patterns engineers should be creating in their markup and styles.<sup id="footnote-src-3"><a href="#footnote-3">3</a></sup> For example:
+Using Getters and Setters:
 
-{% highlight scss %}
-.box {
-    padding: 10px;
-    border: 1px solid #cccccc;
+{% highlight php %}
+<?php
+
+class Building {
+
+  private $address;
+
+  public function getAddress()
+
+  {
+
+    return $this->address;
+
+  }
+
+  public function setAddress($newAddress)
+
+  {
+
+    $this->address = $newAddress;
+
+  }
 }
 
- /* Message Module */
-.message {
-  @extend .box;
-}
+$house = new Building();
 
-.message_success {
-    @extend .box;
-    color: #00ff00;
-}
+$house->setAddress("123 Fake St.");
 
-.message_error {
-    @extend .box;
-    color: #ff0000;
-}
+echo $house->getAddress();
+{% endhighlight %}
 
- /* Feature Module */
-.feature {
-    @extend .box;
-}
+## Why are Getters and Setters Important?
 
-.feature_dark {
-    @extend .box;
-    background: #000000;
+It is a widely-discussed topic that I find myself participating in every so often. “Should I take the easy and fast route and just directly access an object’s property, or should I spend the time to create getters and setters and mark the property as private and make sure to use these throughout my application?” Usually the temptation to directly access the property arises when the programmer thinks the system is small and that there is nothing interesting or complicated about a particular property that would warrant using getters and setters.
+
+Although it is easy to skip the encapsulation and directly access the properties of an object, it is very likely that you will run in to problems down the road. Imagine that you have set a property on an object as a string, and you have used this property around your application in hundreds of places. Then a requirement changes and that string property now needs to be an array, or an integer, or needs to be broken into multiple properties. Now all of these instances of directly accessing the property and treating it as a string will fail. It is usually very difficult to find each instance and time consuming to write tests that would catch the failures. That is just one of the issues caused by directly accessing properties on objects.
+
+## A Real World Example
+
+
+I was recently working on an application that returned a collection of people for a particular call. Each person, as part of its properties, had an array of groups in which this person belonged. This array of groups was directly accessed throughout the application with the assumption that the groups would always be present (or an empty array if the person belonged to zero groups). This was seemingly harmless and had been working fine for years.
+
+But as the application grew, this collection of people and the groups in which they belonged grew to a large amount of data and it became a rather slow call. So the decision was made to stop including the groups as part of the person’s properties by default in the collection. This made the application much faster, but required the client to call a new getGroups method on a person object if the groups were needed. This method fetched the groups from the database and returned them. This was a fine decision in isolation and it made the application faster. But alas! So many bugs popped up due to the groups array not being present where the application assumed it would be present! This was unexpected because, after all, there was no change in the data model. The groups was still an array, all that changed was a single collection fetching method stopped fetching groups by default. This ultimately caused a handful of bugs in production and required changes in dozens of locations throughout the application. That is considered a big problem!
+
+## How This Problem Arises
+
+Original Class Definition:
+
+{% highlight php %}
+class Person {
+
+    public $groups;
+
 }
 {% endhighlight %}
 
-Alone, these modules look unrelated, as they should. But when we look at the output:
+Original Usage:
 
-{% highlight scss %}
-.message,
-.message_success,
-.message_error,
-.feature,
-.feature_dark {
-    padding: 10px;
-    border: 1px solid #cccccc;
-}
+{% highlight php %}
+foreach ($person->groups as $group) {
 
-.message_success {
-    color: #00ff00;
-}
+  echo $group;
 
-.message_error {
-    color: #ff0000;
-}
-
-.feature_dark {
-    background: #000000;
 }
 {% endhighlight %}
 
-Perhaps unexpectedly, these two unrelated modules are forced into the same stack of selectors because `@extend` outputs them that way when they share the same property and value pairs. An issue statement could have explained that to me, but I may have glossed over it, unlike when I was confronted with the stark rule : example format, which forced me to think critically.
+As you can see, this will cause an error if groups is not present on the person object. And if we were to check for the presence of groups before performing this loop, and then fetching the groups if needed, it would be a real mess! This would be a major break down in encapsulation. It would look something like this:
 
-## Use Standards
+{% highlight php %}
+if ($person->groups === null) {
+  // populate the person's groups...
 
-I've seen first-hand this practice solving problems for businesses, teams, and individuals. Some of the stress points I mentioned in this post:
+  $person->groups = someFunctionToFindTheGroups();
+}
 
-- On-boarding a new engineer
-- Employee churn
-- Interoperability
+foreach ($person->groups as $group) {
+  echo $group;
+}
+{% endhighlight %}
 
-Identify those issues in your business or team, and then resolve them using a set of standards.
+What a headache! I don’t even want to try to remember all that every time I want to make use of a person’s groups. Now, we could avoid all of this by using a getGroups method on Person:
 
-<hr>
+{% highlight php %}
+Class Person {
 
-<p id="footnote-1"><a href="#footnote-src-1">1</a> With respect to software, the ability to exchange and make use of information in a program. <a href="http://en.wikipedia.org/wiki/Interoperability#Software">[source]</a></p>
+  private $groups;
 
-<p id="footnote-2"><a href="#footnote-src-2">2</a> There is a popular <a href="http://ted.com/talks/simon_sinek_how_great_leaders_inspire_action">TED Talk</a> on the subject.</p>
+  public function getGroups()
 
-<p id="footnote-3"><a href="#footnote-src-3">3</a> A senior engineer later linked the team to <a href="http://csswizardry.com/2014/11/when-to-use-extend-when-to-use-a-mixin/">this article</a>, which explains the <code>@extend</code> no-no thoroughly.</p>
+  {
 
+    return $this->groups;
+
+  }
+{% endhighlight %}
+
+New Usage:
+
+{% highlight php %}
+foreach ($person->getGroups() as $group) {
+
+  echo $group;
+
+}
+{% endhighlight %}
+
+If we had started with this, we would find ourselves in a much better situation when we try to implement lazy loading of a person’s groups. In fact, we would only need to make a change in one location! The getGroups method would need to be changed to check for and fetch the groups before returning them:
+
+{% highlight php %}
+Class Person {
+
+    private $groups;
+
+    public function getGroups()
+
+    {
+
+        if ($this->groups === null) {
+
+            // fetch the groups from the database
+
+            $this->groups = $this->fetchGroupsFromDatabase();
+
+        }
+
+        return $this->groups;
+
+    }
+
+}
+{% endhighlight %}
+
+We don’t have to change our usage of the class at all! The object will fetch its groups when it is required without the application checking for their presence. This is the power of encapsulation and using getters and setters.
+
+## What I Learned
+
+I learned that there are a wide variety of code changes that will affect the state of an object’s properties. It is best to future-proof your application by making smart use of encapsulation techniques like getter and setter methods before the problem becomes overly expensive to change.

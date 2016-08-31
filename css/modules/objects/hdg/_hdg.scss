@@ -28,8 +28,20 @@
   font-weight: $FONT_WEIGHT_BOLD;
 }
 
+.mix-hdg--alignCenter {
+  text-align: center;
+}
+
+.mix-hdg--colorVibrant {
+  color: $COLOR_PRIMARY_VIBRANT;
+}
+
 .mix-hdg--colorVibrantLight {
   color: $COLOR_SECONDARY_VIBRANT;
+}
+
+.mix-hdg--colorTertiaryVibrant {
+  color: $COLOR_TERTIARY_VIBRANT;
 }
 
 .mix-hdg--colorPrimaryLight {

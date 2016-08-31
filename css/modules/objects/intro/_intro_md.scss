@@ -1,15 +1,16 @@
 /* ---------------------------------------------------------------------
- Card
+ Introduction
 ------------------------------------------------------------------------ */
 
-.card {
-  height: 40rem;
-  position: relative;
+.intro__figure {
+  max-width: none;
+  width: 55rem;
 }
 
-.card__bd {
-  bottom: 0;
-  left: 0;
-  position: absolute;
-  width: 100%;
+.intro__text > * {
+  max-width: 45rem;
+}
+
+.intro__text > * + * {
+  margin-top: 2rem;
 }

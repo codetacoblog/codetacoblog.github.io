@@ -23,11 +23,17 @@
 
 .txt--link {
   border-bottom: 0.1rem dotted currentColor;
+  color: $COLOR_SECONDARY_VIBRANT;
+}
+
+.txt--link:visited {
+  color: $COLOR_SECONDARY_VIBRANT;
 }
 
 .txt--link:hover,
 .txt--link:focus {
   border-bottom: 0.1rem solid currentColor;
+  color: $COLOR_SECONDARY_VIBRANT;
 }
 
 .mix-txt--bold {
@@ -40,4 +46,12 @@
 
 .mix-txt--breathing {
   line-height: 1.3;
+}
+
+.mix-txt--colorVibrant {
+  color: $COLOR_PRIMARY_VIBRANT;
+}
+
+.mix-txt--colorTertiaryVibrant {
+  color: $COLOR_TERTIARY_VIBRANT;
 }

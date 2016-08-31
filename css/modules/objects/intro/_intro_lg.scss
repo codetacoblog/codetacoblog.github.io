@@ -1,8 +1,8 @@
 /* ---------------------------------------------------------------------
- Card
+ Introduction
 ------------------------------------------------------------------------ */
 
-.card:hover {
-  @include transition(transform 0.3s ease-in);
-  @include transform(scale(1.05));
+.intro__figure {
+  width: 70rem;
 }
+

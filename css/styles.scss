@@ -26,10 +26,10 @@
 @import "modules/layout/site/site";
 @import "modules/layout/tier/tier";
 
-@import "modules/objects/card/card";
 @import "modules/objects/hdg/hdg";
 @import "modules/objects/hero/hero";
 @import "modules/objects/highlight/highlight";
+@import "modules/objects/intro/intro";
 @import "modules/objects/link/link";
 @import "modules/objects/logo/logo";
 @import "modules/objects/nav/nav";
@@ -55,12 +55,13 @@
   @import "modules/layout/grid/grid_md";
   @import "modules/layout/tier/tier_md";
 
-  @import "modules/objects/card/card_md";
   @import "modules/objects/hdg/hdg_md";
   @import "modules/objects/hero/hero_md";
+  @import "modules/objects/intro/intro_md";
   @import "modules/objects/logo/logo_md";
   @import "modules/objects/nav/nav_md";
   @import "modules/objects/post/post_md";
+  @import "modules/objects/section/section_md";
   @import "modules/objects/txt/txt_md";
 
   @import "modules/repeaters/blocks/blocks_md";
@@ -78,9 +79,9 @@
 
   @import "modules/layout/container/container_lg";
 
-  @import "modules/objects/card/card_lg";
   @import "modules/objects/hdg/hdg_lg";
   @import "modules/objects/hero/hero_lg";
+  @import "modules/objects/intro/intro_lg";
   @import "modules/objects/logo/logo_lg";
   @import "modules/objects/nav/nav_lg";
   @import "modules/objects/post/post_lg";

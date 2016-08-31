@@ -1,9 +1,19 @@
 /* ---------------------------------------------------------------------
  Post styles
 ------------------------------------------------------------------------ */
+$quarantine-VERTICAL_RHTYHM_LOOSE: 4rem;
 
 .post {
   font-size: 1.8rem;
+}
+
+.post h1,
+.post h2,
+.post h3,
+.post h4,
+.post h5,
+.post h6 {
+  margin-top: $quarantine-VERTICAL_RHTYHM_LOOSE; /* 1 */
 }
 
 .post h1 {
@@ -24,4 +34,9 @@
 
 .post h5 {
   font-size: 1.8rem;
+}
+
+.post pre {
+  margin-top: $quarantine-VERTICAL_RHTYHM_LOOSE; /* 1 */
+  margin-bottom: $quarantine-VERTICAL_RHTYHM_LOOSE; /* 1 */
 }
