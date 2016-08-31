@@ -1,0 +1,28 @@
+/* ---------------------------------------------------------------------
+ Vertical List
+------------------------------------------------------------------------ */
+
+.vList {
+  display: block;
+}
+
+.vList > * + * {
+  margin-top: 1rem;
+}
+
+.vList--flush > * + * {
+  margin-top: 0;
+}
+
+.vList--detached > * + * {
+  margin-top: 2rem;
+}
+
+.vList--separated > * + * {
+  margin-top: 3rem;
+}
+
+.mix-vList--borderedSeparated > * + * {
+  border-top: 0.1rem dashed $COLOR_SECONDARY_DARK;
+  padding-top: 2rem;
+}

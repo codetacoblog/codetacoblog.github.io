@@ -1,0 +1,39 @@
+/* ---------------------------------------------------------------------
+ Set - a set of things grouped
+------------------------------------------------------------------------ */
+
+.set {
+  display: block;
+}
+
+.set__bd {
+  margin-top: 1rem;
+}
+
+.set__bd--flush {
+  margin-top: 0;
+}
+
+.set__bd--detached {
+  margin-top: 2rem;
+}
+
+.set__bd--separated {
+  margin-top: 3rem;
+}
+
+.set__ft {
+  margin-top: 1rem;
+}
+
+.set__ft--flush {
+  margin-top: 0;
+}
+
+.set__ft--detached {
+  margin-top: 2rem;
+}
+
+.set__ft--separated {
+  margin-top: 3rem;
+}

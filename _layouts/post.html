@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ site.description }}">
+    <title>{{ page.title }} | Code Taco</title >
+
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+    <link href="/css/styles.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="site">
+      <div class="site__bd">
+        {% include header.html %}
+
+        <div id="main" class="main main--post" role="main">
+          <div class="tier">
+            <div class="container">
+              <section class="section">
+                <div class="section__header">
+                  <div class="set">
+                    <div class="set__hd">
+                      <h1 class="hdg hdg--1">{{page.title}}</h1>
+                    </div>
+                    <div class="set__bd">
+                      <span class="txt txt--sm">{{ page.date | date: "%b %-d, %Y" }}</span>
+                    </div>
+                    <div class="set__ft">
+                      {% for tag in page.tags %}
+                        <a class="txt txt--sm" href="{{site.github.url}}/tag/{{tag}}">#{{ tag }}</a>
+                      {% endfor %}
+                    </div>
+                  </div>
+                </div>
+                <div class="section__content">
+                  <div class="post">
+                    {{ content }}
+                  </div><!-- end: post -->
+                </div>
+              </section><!-- end: section -->
+            </div><!-- end: container -->
+          </div><!-- end: tier -->
+        </div><!-- end: main -->
+      </div>
+      <div class="site__ft">
+        {% include footer.html %}
+      </div>
+    </div><!-- end: site -->
+  </body>
+</html>

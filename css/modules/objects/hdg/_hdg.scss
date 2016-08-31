@@ -1,0 +1,37 @@
+/* ---------------------------------------------------------------------
+ Headings
+------------------------------------------------------------------------ */
+
+.hdg {
+  display: block;
+  font-family: $FONT_FAMILY_SERIF;
+  line-height: 1.3;
+}
+
+.hdg--1 {
+  font-size: 3rem;
+}
+
+.hdg--2 {
+  font-size: 2.4rem;
+}
+
+.hdg--3 {
+  font-size: 2rem;
+}
+
+.hdg--4 {
+  font-size: 1.6rem;
+}
+
+.mix-hdg--bold {
+  font-weight: $FONT_WEIGHT_BOLD;
+}
+
+.mix-hdg--colorVibrantLight {
+  color: $COLOR_SECONDARY_VIBRANT;
+}
+
+.mix-hdg--colorPrimaryLight {
+  color: $COLOR_PRIMARY_LIGHT;
+}

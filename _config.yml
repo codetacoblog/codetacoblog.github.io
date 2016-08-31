@@ -16,7 +16,7 @@
 title: Code Taco
 email: codetacoblog@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  A friendly endeavor towards software knowledge.
+  Easily digestible thoughts about software development.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://codetaco.com" # the base hostname & protocol for your site
 twitter_username: codetaco
@@ -24,3 +24,13 @@ github_username:  codetacoblog
 
 # Build settings
 markdown: kramdown
+highlighter: rouge
+sass:
+    sass_dir: css
+gems:
+  - jekyll-sitemap
+port: 7890
+
+#tag settings
+tag_page_layout: tag
+tag_page_dir: tag

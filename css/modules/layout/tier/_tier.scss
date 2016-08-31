@@ -1,0 +1,19 @@
+/* ---------------------------------------------------------------------
+ Tier - A large area for placing content
+------------------------------------------------------------------------ */
+
+.tier {
+  display: block;
+}
+
+.tier + .tier {
+  margin-top: 2rem;
+}
+
+.tier--detached + .tier--detached {
+  margin-top: 4rem;
+}
+
+.tier--separated + .tier--separated {
+  margin-top: 6rem;
+}

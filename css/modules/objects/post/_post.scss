@@ -1,0 +1,450 @@
+/* ---------------------------------------------------------------------
+ Post styles
+------------------------------------------------------------------------ */
+
+/* quarantine.css | MIT License | github.com/apticknor/quarantine.css */
+
+/*
+ SASS Variable Configuration
+
+ * Configure the variables to create the quarantine styles you desire
+========================================================================== */
+$quarantine-VERTICAL_RHTYHM_DEFAULT: 1rem;
+$quarantine-VERTICAL_RHTYHM_LOOSE: 2rem;
+
+/*
+ Clearfix
+
+ * Always clear unknown content as it may contain a float
+========================================================================== */
+.post:before,
+.post:after {
+  content: " ";
+  display: table;
+}
+
+.post:after {
+  clear: both;
+}
+
+/*
+ Baseline
+
+ 1. Set the container to inherit basic styles from it's parent
+ 2. Make sure long words line break appropriately
+ 3. Remove excess margin from the first and last child and use !important to override inheritance from ancestors
+========================================================================== */
+.post {
+  color: inherit; /* 1 */
+  font-family: inherit;  /* 1 */
+  font-weight: normal;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  -ms-word-wrap: break-word; /* 2 */
+  word-wrap: break-word; /* 2 */
+}
+
+.post > *:first-child {
+  margin-top: 0 !important; /* 3 */
+}
+
+.post > *:last-child {
+  margin-bottom: 0 !important; /* 3 */
+}
+
+/*
+ Embedded Content & Media
+
+ * All media set to max-width 100% to prevent it from overflowing the container
+ 1. !important to override inheritance from ancestors
+ 2. If a piece of media does not have a container, add margin below it to keep the flow intact
+========================================================================== */
+.post img,
+.post iframe,
+.post embed,
+.post object,
+.post video,
+.post audio,
+.post canvas,
+.post picture {
+  max-width: 100% !important; /* 1 */
+}
+
+/* 2 */
+.post > img,
+.post > iframe,
+.post > embed,
+.post > object,
+.post > video,
+.post > audio,
+.post > canvas,
+.post > picture {
+  display: inline-block;
+  margin-bottom: $quarantine-VERTICAL_RHTYHM_DEFAULT;
+}
+
+/*
+ Anchors
+========================================================================== */
+.post a:link {
+  color: $COLOR_PRIMARY_VIBRANT;
+  border-bottom: 0.1rem dotted currentColor;
+}
+
+.post a:visited {
+
+}
+
+.post a:focus,
+.post a:hover {
+  color: $COLOR_PRIMARY_VIBRANT;
+  border-bottom: 0.1rem solid currentColor;
+}
+
+.post a:active {
+
+}
+
+/*
+ Paragraphs
+========================================================================== */
+.post p {
+  margin-bottom: $quarantine-VERTICAL_RHTYHM_DEFAULT;
+}
+
+/*
+ Headings
+
+ 1. Take advantage of margin collapsing to create greater space above a heading
+ 2. Reduce line-height as headings are much larger than body copy
+ 3. Headings should stay the same color as intended and not inherit link styles and use !important to override inheritance from ancestors
+========================================================================== */
+.post h1,
+.post h2,
+.post h3,
+.post h4,
+.post h5,
+.post h6 {
+  margin-top: $quarantine-VERTICAL_RHTYHM_LOOSE; /* 1 */
+  margin-bottom: $quarantine-VERTICAL_RHTYHM_DEFAULT;
+  font-family: $FONT_FAMILY_SERIF;
+  line-height: 1.2; /* 2 */
+}
+
+.post h1 {
+  font-size: 3rem;
+}
+
+.post h2 {
+  font-size: 2.4rem;
+}
+
+.post h3 {
+  font-size: 2rem;
+}
+
+.post h4 {
+  font-size: 1.6rem;
+}
+
+.post h5 {
+  font-size: 1.4rem;
+}
+
+.post h1 a,
+.post h2 a,
+.post h3 a,
+.post h4 a,
+.post h5 a,
+.post h6 a {
+  color: inherit !important; /* 3 */
+}
+
+/*
+ Blockquote
+
+ 1. Push content away from the horizontal rule more than the normal spacing
+ 2. Border inherits color from text color
+ 3. Remove bottom margin from last item inside a blockquote
+========================================================================== */
+.post blockquote {
+  box-sizing: border-box;
+  margin-top: $quarantine-VERTICAL_RHTYHM_LOOSE; /* 1 */
+  margin-bottom: $quarantine-VERTICAL_RHTYHM_LOOSE; /* 1 */
+  border-left: 5px solid $COLOR_PRIMARY_LIGHT; /* 2 */
+  padding: 1rem 2rem;
+  font-family: inherit;
+  font-size: 1.8rem;
+  font-style: italic;
+}
+
+.post blockquote > *:last-child {
+  margin-bottom: 0; /* 3 */
+}
+
+/*
+ Address
+
+ 1. Mimic browser default text style - italics
+========================================================================== */
+.post address {
+  margin-bottom: $quarantine-VERTICAL_RHTYHM_DEFAULT;
+  font-style: italic; /* 1 */
+}
+
+/*
+ Horizontal Rule
+
+ 1. Push content away from the horizontal rule than the normal spacing
+ 2. Set an explicit 1px height for the horizontal rule
+ 3. Remove borders for maximum browser support
+ 4. Set the color of the horizontal rule as both color and background-color for maximum browser support
+ 5. Reduce font-size and line-height to keep height from exceeeding 1px
+========================================================================== */
+.post hr {
+  margin-top: $quarantine-VERTICAL_RHTYHM_LOOSE; /* 1 */
+  margin-bottom: $quarantine-VERTICAL_RHTYHM_LOOSE; /* 1 */
+  height: 1px; /* 2 */
+  border: none; /* 3 */
+  background: $COLOR_SECONDARY_DARK; /* 4 */
+  color: $COLOR_SECONDARY_DARK; /* 4 */
+  line-height: 1px; /* 5 */
+  font-size: 1px; /* 5 */
+}
+
+/*
+ Inline Text
+
+ * Mimics browsers as close as possible while maintaining cross browser consistency
+ * Includes some invalid legacy elements as they may be added by older WYSIWYG editors
+========================================================================== */
+.post strong,
+.post b {
+  font-weight: bold;
+}
+
+.post em,
+.post i {
+  font-style: italic;
+}
+
+.post del,
+.post strike,
+.post s {
+  text-decoration: line-through;
+}
+
+.post u,
+.post ins {
+  text-decoration: underline;
+}
+
+.post sup {
+  vertical-align: super;
+  font-size: smaller;
+}
+
+.post sub {
+  vertical-align: sub;
+  font-size: smaller;
+}
+
+.post big {
+  font-size: larger;
+}
+
+.post small {
+  font-size: smaller;
+}
+
+.post abbr,
+.post acronym {
+  border-bottom: 1px dotted;
+}
+
+.post cite,
+.post dfn {
+  font-style: italic;
+}
+
+.post q {
+  font-style: italic;
+}
+
+.post q::before {
+  content: open-quote;
+}
+
+.post q::after {
+  content: close-quote;
+}
+
+.post q:lang(en) {
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+.post bdo,
+.post bdi {
+  direction: rtl;
+}
+
+.post blink {
+  text-decoration: blink;
+}
+
+/*
+ Lists
+ 1. Indent lists and leave room for the list item mark
+ 2. Nested lists have no bottom margin
+ 3. Second level nested lists
+ 4. Third level nested lists
+========================================================================== */
+.post ul,
+.post ol,
+.post dl {
+  margin-bottom: $quarantine-VERTICAL_RHTYHM_DEFAULT;
+}
+
+.post ul {
+  list-style-type: disc;
+}
+
+.post ol {
+  list-style-type: decimal;
+}
+
+.post dt {
+  font-weight: bold;
+}
+
+.post li,
+.post dd {
+  margin-left: $quarantine-VERTICAL_RHTYHM_LOOSE; /* 1 */
+}
+
+/* 2 */
+.post ul ul,
+.post ul ol,
+.post ul dl,
+.post ol ul,
+.post ol ol,
+.post ol dl,
+.post dl ul,
+.post dl ol,
+.post dl dl {
+  margin-bottom: 0;
+}
+
+/* 3 */
+.post ol ul,
+.post ul ul {
+  list-style-type: circle;
+}
+
+/* 4 */
+.post ol ol ul,
+.post ol ul ul,
+.post ul ol ul,
+.post ul ul ul {
+  list-style-type: square;
+}
+
+
+/*
+ Tables
+ 1. Table should never overflow their parent container and will always use 100% of the container and use !important to override inheritance from ancestors
+ 2. Push content away from the horizontal rule more than the normal spacing
+========================================================================== */
+.post table {
+  width: 100% !important; /* 1 */
+  margin-bottom: $quarantine-VERTICAL_RHTYHM_LOOSE;  /* 2 */
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+.post caption {
+  font-size: smaller;
+  padding: 10px 12px;
+  text-align: center;
+}
+
+.post tr {
+  vertical-align: middle;
+}
+
+.post tbody {
+  vertical-align: middle;
+}
+
+.post thead {
+  vertical-align: middle;
+}
+
+.post tfoot {
+  vertical-align: middle;
+}
+
+.post td {
+  vertical-align: inherit;
+  text-align: left;
+  padding: 4px 12px;
+  border: 1px solid #666666;
+}
+
+.post th {
+  vertical-align: inherit;
+  text-align: left;
+  font-weight: bold;
+  padding: 8px 12px;
+  border: 1px solid #666666;
+  background-color: transparent;
+}
+
+/*
+ Computer Output
+
+ 1. Push content away from the horizontal rule more than the normal spacing
+ 2. `code` styles get reset when `code` is nested inside `pre`
+========================================================================== */
+.post pre {
+  margin-top: $quarantine-VERTICAL_RHTYHM_LOOSE; /* 1 */
+  margin-bottom: $quarantine-VERTICAL_RHTYHM_LOOSE; /* 1 */
+  padding: 2rem;
+  border: 0.3rem solid $COLOR_SECONDARY_DARK;
+  font-family: "Lucida Console", Monaco, monospace;
+  font-size: 1.4rem;
+  border-radius: 0.3rem;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.post code {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  background-color: $COLOR_SECONDARY_DARK;
+  color: $COLOR_SECONDARY_LIGHT;
+  font-size: 1.4rem;
+  border-radius: 0.3rem;
+}
+
+.post pre code {
+  display: block;
+  padding: 0; /* 2 */
+  background-color: transparent; /* 2 */
+  border: none; /* 2 */
+  font-size: inherit; /* 2 */
+  color: inherit; /* 2 */
+  border-radius: 0; /* 2 */
+}
+
+.post code,
+.post samp,
+.post tt,
+.post kbd,
+.post var {
+  font-family: "Lucida Console", Monaco, monospace;
+}
+
+.post var {
+  font-style: italic;
+}

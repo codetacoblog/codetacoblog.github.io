@@ -1,0 +1,16 @@
+/* ---------------------------------------------------------------------
+ Section - A grouping of like content
+------------------------------------------------------------------------ */
+
+.section {
+  display: block;
+}
+
+.section__content {
+  margin-top: 2rem;
+}
+
+.mix-section--borderTop {
+  border-top: 0.1rem dashed $COLOR_SECONDARY_LIGHT;
+  padding-top: 2rem;
+}

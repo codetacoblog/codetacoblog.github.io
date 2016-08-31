@@ -1,0 +1,43 @@
+/* ---------------------------------------------------------------------
+ Text styles
+------------------------------------------------------------------------ */
+
+.txt {}
+
+.txt--lg {
+  font-size: 2rem;
+}
+
+.txt--md {
+  font-size: 1.8rem;
+}
+
+.txt--sm {
+  font-size: 1.4rem;
+}
+
+.txt--quote {
+  border-left: 0.5rem solid $COLOR_SECONDARY_LIGHT;
+  padding-left: 2rem;
+}
+
+.txt--link {
+  border-bottom: 0.1rem dotted currentColor;
+}
+
+.txt--link:hover,
+.txt--link:focus {
+  border-bottom: 0.1rem solid currentColor;
+}
+
+.mix-txt--bold {
+  font-weight: $FONT_WEIGHT_BOLD;
+}
+
+.mix-txt--italic {
+  font-style: italic;
+}
+
+.mix-txt--breathing {
+  line-height: 1.3;
+}

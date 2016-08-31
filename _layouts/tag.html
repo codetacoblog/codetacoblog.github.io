@@ -1,0 +1,35 @@
+---
+layout: default
+---
+<div class="tier tier--separated">
+  <div class="container">
+    <section class="section">
+      <div class="section__header">
+        <h1 class="hdg hdg--1">#{{ page.tag }}</h1>
+      </div>
+      <div class="section__content">
+        <ul class="vList vList--separated mix-vList--borderedSeparated">
+          {% for post in page.posts %}
+            <li>
+              <div class="set">
+                <div class="set__hd">
+                  <a href="{{ post.url | prepend: site.github.url }}">
+                    <h2 class="hdg hdg--3 mix-hdg--colorVibrantLight">{{ post.title | escape }}</h2>
+                  </a>
+                </div>
+                <div class="set__bd">
+                  <span class="txt txt--sm">{{ post.date | date: "%b %-d, %Y" }}</span>
+                </div>
+                <div class="set__ft">
+                  {% for tag in post.tags %}
+                    <a class="txt txt--sm" href="{{site.github.url}}/tag/{{tag}}">#{{ tag }}</a>
+                  {% endfor %}
+                </div>
+              </div><!-- end: set -->
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </section>
+  </div><!-- end: container -->
+</div><!-- end: tier -->
