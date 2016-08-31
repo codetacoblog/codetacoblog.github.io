@@ -4,7 +4,7 @@
 
 .hdg {
   display: block;
-  font-family: $FONT_FAMILY_MONO;
+  font-family: $FONT_FAMILY_SERIF;
   line-height: 1.1;
 }
 
@@ -22,6 +22,10 @@
 
 .hdg--4 {
   font-size: 1.6rem;
+}
+
+.hdg--mono {
+  font-family: $FONT_FAMILY_MONO;
 }
 
 .mix-hdg--bold {

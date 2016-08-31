@@ -16,11 +16,11 @@
   position: relative;
 
   // Hide aliased edges caused by mixing blend modes. Will appear as a faint dark outline on certain backgrounds. Tweak to improve rendering
-    text-shadow:
-      1px 1px 0px $background,
-      1px -1px 0px $background,
-      -1px -1px 0px $background,
-      -1px 1px 0px $background;
+    // text-shadow:
+    //   1px 1px 0px $background,
+    //   1px -1px 0px $background,
+    //   -1px -1px 0px $background,
+    //   -1px 1px 0px $background;
 
   &::before,
   &::after {

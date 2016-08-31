@@ -16,6 +16,10 @@
   font-size: 1.4rem;
 }
 
+.txt--mono {
+  font-family: $FONT_FAMILY_MONO;
+}
+
 .txt--quote {
   border-left: 0.5rem solid $COLOR_SECONDARY_LIGHT;
   padding-left: 2rem;
