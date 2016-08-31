@@ -14,11 +14,15 @@ body {
   background-color: $COLOR_PRIMARY_DARK;
   background-repeat: repeat;
   color: $COLOR_LIGHTEST;
-  font-family: $FONT_FAMILY_SANS;
+  font-family: sans-serif;
   font-size: 1.6rem;
   font-weight: $FONT_WEIGHT_NORMAL;
   line-height: 1.2;
   -webkit-font-smoothing: antialiased;
+}
+
+.sans-loaded body {
+  font-family: $FONT_FAMILY_SANS;
 }
 
 html,

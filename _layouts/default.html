@@ -1,16 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="{{ site.description }}">
     <title>{{ page.title }} | Code Taco</title >
+    {% include head-common.html %}
 
-    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Lora:400,700" rel="stylesheet">
-    <link href="/css/styles.css" rel="stylesheet">
+    {% include font-observer.html %}
   </head>
   <body style="background-image: url({{ '/assets/images/bg.png' | prepend: site.github.url }})">
     <div class="site">

@@ -17,6 +17,10 @@
 }
 
 .txt--mono {
+  font-family: monospace;
+}
+
+.mono-loaded .txt--mono {
   font-family: $FONT_FAMILY_MONO;
 }
 
