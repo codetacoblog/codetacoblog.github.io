@@ -16,8 +16,9 @@
   background: $COLOR_PRIMARY_VIBRANT;
   color: $COLOR_LIGHTEST;
   display: inline-block;
+  opacity: 0;
   padding: 1rem 2rem;
-  @include transition(transform 0.1s ease-out);
+  @include transition(all 0.1s ease-out);
   @include transform(translateY(-100%));
 }
 
@@ -26,7 +27,8 @@
 }
 
 .nav__skip > *:focus {
-  @include transition(transform 0.1s ease-in);
+  opacity: 1;
+  @include transition(all 0.1s ease-in);
   @include transform(translateY(0));
 }
 
