@@ -1,0 +1,45 @@
+/* ---------------------------------------------------------------------
+ Navigation
+------------------------------------------------------------------------ */
+
+.nav {
+  display: block;
+}
+
+.nav__skip {
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+
+.nav__skip > * {
+  background: $COLOR_PRIMARY_VIBRANT;
+  color: $COLOR_LIGHTEST;
+  display: inline-block;
+  opacity: 0;
+  padding: 1rem 2rem;
+  @include transition(all 0.1s ease-out);
+  @include transform(translateY(-100%));
+}
+
+.nav__skip > *:visited {
+  color: $COLOR_LIGHTEST;
+}
+
+.nav__skip > *:focus {
+  opacity: 1;
+  @include transition(all 0.1s ease-in);
+  @include transform(translateY(0));
+}
+
+.nav__logo {
+  display: block;
+}
+
+.nav__links {
+  color: $COLOR_PRIMARY_DARK;
+  font-size: 1.4rem;
+  line-height: 1;
+  margin: 0.5rem 0;
+  text-align: center;
+}

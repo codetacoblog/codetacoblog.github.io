@@ -1,0 +1,50 @@
+---
+layout: default
+title: Welcome
+---
+
+<div class="tier tier--separated">
+  <div class="container">
+    <section class="intro">
+      <figure class="intro__figure">
+        {% include truck.svg %}
+      </figure>
+      <div class="intro__text">
+        <h2 class="hdg hdg--1 hdg--mono mix-hdg--colorTertiaryVibrant">Welcome to <span class="txt mix-txt--bold mix-txt--colorVibrant">CodeTaco</span></h2>
+        <p class="txt txt--md">{{ site.description }}</p>
+      </div>
+    </section>
+  </div><!-- end: container -->
+</div><!-- end: tier -->
+<div class="tier tier--separated">
+  <div class="container">
+    <section class="section mix-section--borderTop">
+      <div class="section__header">
+        <h2 class="hdg hdg--2 mix-hdg--solid">Recent Articles</h2>
+      </div>
+      <div class="section__content">
+        <ul class="blocks blocks--2up blocks--3upDesktop">
+          {% for post in site.posts limit:6 %}
+            <li>
+              <div class="set">
+                <div class="set__hd">
+                  <a href="{{ post.url | prepend: site.github.url }}">
+                    <h3 class="hdg hdg--3 mix-hdg--colorVibrantLight">{{ post.title | escape }}</h3>
+                  </a>
+                </div>
+                <div class="set__bd">
+                  <span class="txt txt--sm">{{ post.date | date: "%b %-d, %Y" }}</span>
+                </div>
+                <div class="set__ft">
+                  {% for tag in post.tags %}
+                    <a class="txt txt--sm txt--link" href="{{site.github.url}}/tag/{{tag}}">#{{ tag }}</a>
+                  {% endfor %}
+                </div>
+              </div><!-- end: set -->
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </section>
+  </div><!-- end: container -->
+</div><!-- end: tier -->

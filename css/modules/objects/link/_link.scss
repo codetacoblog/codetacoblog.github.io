@@ -1,0 +1,12 @@
+/* ---------------------------------------------------------------------
+ Link
+------------------------------------------------------------------------ */
+
+.link {
+  border-bottom: 0.1rem dotted currentColor;
+}
+
+.link:hover,
+.link:focus {
+  border-bottom: 0.1rem solid currentColor;
+}

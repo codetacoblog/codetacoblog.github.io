@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ page.title }} | Code Taco</title >
+    {% include head-common.html %}
+
+    {% include font-observer.html %}
+  </head>
+  <body style="background-image: url({{ '/assets/images/bg.png' | prepend: site.github.url }})">
+    <div class="site">
+      <div class="site__bd">
+        {% include header.html %}
+
+        <div id="main" class="main" role="main">
+          {{ content }}
+        </div><!-- end: main -->
+      </div>
+      <div class="site__ft">
+        {% include footer.html %}
+      </div>
+    </div><!-- end: site -->
+  </body>
+</html>

@@ -1,0 +1,31 @@
+/* ---------------------------------------------------------------------
+ Responsive Grid (12 Column)
+------------------------------------------------------------------------ */
+.grid {
+  @include clearfix();
+}
+
+.grid + .grid {
+  margin-top: 1.2rem;
+}
+
+.grid__col {
+  float: left;
+  min-height: 1px;
+  position: relative;
+  vertical-align: top;
+  width: 100%;
+}
+
+.grid__col + .grid__col {
+  margin-top: 1.2rem;
+}
+
+.grid__col:first-child {
+  margin-left: 0; // no margin left on the first column
+}
+
+.grid__col:last-child {
+  float: right; // hide sub pixel rounding errors in the last gutter
+  margin-right: 0; // no margin right on the last column
+}

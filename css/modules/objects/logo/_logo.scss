@@ -1,0 +1,36 @@
+/* ---------------------------------------------------------------------
+ Logo
+------------------------------------------------------------------------ */
+
+.logo {
+  display: block;
+  font-size: 0;
+  text-align: center;
+}
+
+.logo__img {
+  display: inline-block;
+  fill: $COLOR_TERTIARY_VIBRANT;
+  height: 3.4rem;
+  margin-right: 1rem;
+  vertical-align: baseline;
+  width: 3.4rem;
+}
+
+.logo__txt {
+  border-bottom: 0.2rem solid $COLOR_PRIMARY_DARK;
+  display: inline-block;
+  font-family: monospace;
+  font-size: 3.6rem;
+  line-height: 1;
+  vertical-align: baseline;
+  @include gradient-text('CodeTaco', $COLOR_PRIMARY_DARK, linear-gradient(to right, $COLOR_TERTIARY_VIBRANT, $COLOR_SECONDARY_VIBRANT));
+}
+
+.mono-loaded .logo__txt {
+  font-family: $FONT_FAMILY_MONO;
+}
+
+.logo:active .logo__txt {
+  border-bottom: 0.2rem solid $COLOR_TERTIARY_VIBRANT;
+}

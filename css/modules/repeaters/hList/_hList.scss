@@ -1,0 +1,47 @@
+/* ---------------------------------------------------------------------
+ Horizontal List
+------------------------------------------------------------------------ */
+
+.hList {
+  display: block;
+  font-size: 0;
+}
+
+.hList > * {
+  display: inline-block;
+  font-size: 1.6rem;
+  vertical-align: middle;
+}
+
+.hList > * + * {
+  margin-left: 1rem;
+}
+
+.hList--flush > * + * {
+  margin-left: 0;
+}
+
+.hList--detached > * + * {
+  margin-left: 2rem;
+}
+
+.hList--separated > * + * {
+  margin-left: 3rem;
+}
+
+.mix-hList--centered {
+  text-align: center;
+}
+
+.mix-hList--piped > * {
+  border-right: 0.1rem solid currentColor;
+  margin-left: 0;
+  margin-right: 1rem;
+  padding-right: 1rem;
+}
+
+.mix-hList--piped > *:last-child {
+  border-right: none;
+  margin: 0;
+  padding: 0;
+}

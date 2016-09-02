@@ -1,0 +1,37 @@
+/* ---------------------------------------------------------------------
+ Introduction
+------------------------------------------------------------------------ */
+
+.intro {
+  position: relative;
+}
+
+.intro__figure {
+  display: block;
+  fill: $COLOR_SECONDARY_DARK;
+  margin: 0 auto;
+  width: 28rem;
+}
+
+.intro__figure > * {
+  width: 100%;
+}
+
+.intro__text {
+  left: 0;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  width: 100%;
+  @include transform(translateY(-50%));
+}
+
+.intro__text > * {
+  display: block;
+  margin: 0 auto;
+  max-width: 34rem;
+}
+
+.intro__text > * + * {
+  margin-top: 1rem;
+}

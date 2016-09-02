@@ -1,0 +1,18 @@
+/* ---------------------------------------------------------------------
+ Logo
+------------------------------------------------------------------------ */
+
+.logo__img {
+  height: 7rem;
+  width: 7rem;
+}
+
+.logo__txt {
+  font-size: 7.2rem;
+  @include transition(border-color 0.3s ease-out);
+}
+
+.logo:hover .logo__txt {
+  border-bottom: 0.2rem solid $COLOR_TERTIARY_VIBRANT;
+  @include transition(border-color 0.3s ease-in);
+}

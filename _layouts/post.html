@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ page.title }} | Code Taco</title >
+    {% include head-common.html %}
+
+    {% include font-observer.html %}
+  </head>
+  <body style="background-image: url({{ '/assets/images/bg.png' | prepend: site.github.url }})">
+    <div class="site">
+      <div class="site__bd">
+        {% include header.html %}
+
+        <div id="main" class="main main--post" role="main">
+          <div class="tier">
+            <div class="container">
+              <section class="section">
+                <div class="section__header">
+                  <div class="set">
+                    <div class="set__hd">
+                      <h1 class="hdg hdg--1">{{page.title}}</h1>
+                    </div>
+                    <div class="set__bd">
+                      <span class="txt txt--sm">{{ page.date | date: "%b %-d, %Y" }}</span>
+                    </div>
+                    <div class="set__bd">
+                      <span class="txt txt--sm">By: <a class="txt txt--link" href="{{site.github.url}}/authors/{{page.author}}">{{ page.authorname }}</a></span>
+                    </div>
+                    <div class="set__ft">
+                      {% for tag in page.tags %}
+                        <a class="txt txt--sm txt--link" href="{{site.github.url}}/tag/{{tag}}">#{{ tag }}</a>
+                      {% endfor %}
+                    </div>
+                  </div>
+                </div>
+                <div class="section__content">
+                  <div class="post">
+                    {{ content }}
+                  </div><!-- end: post -->
+                </div>
+              </section><!-- end: section -->
+            </div><!-- end: container -->
+          </div><!-- end: tier -->
+        </div><!-- end: main -->
+      </div>
+      <div class="site__ft">
+        {% include footer.html %}
+      </div>
+    </div><!-- end: site -->
+  </body>
+</html>
