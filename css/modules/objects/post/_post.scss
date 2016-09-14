@@ -421,10 +421,14 @@ $quarantine-VERTICAL_RHTYHM_LOOSE: 2rem;
   padding: 2rem;
   border: 0.3rem solid $COLOR_SECONDARY_DARK;
   font-family: monospace;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   border-radius: 0.3rem;
   white-space: pre-wrap;
   word-break: break-all;
+
+  @media (min-width: $VIEWPORT_MEDIUM) {
+    font-size: 1.8rem;
+  }
 }
 
 .mono-loaded .post pre {
